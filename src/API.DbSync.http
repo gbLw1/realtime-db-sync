@@ -1,0 +1,6 @@
+@API.DbSync_HostAddress = http://localhost:5262
+
+GET {{API.DbSync_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
