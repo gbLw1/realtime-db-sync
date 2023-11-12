@@ -35,7 +35,7 @@ dotnet ef database update --context MySQLDbContext
 
 the migrations will create the databases and the tables for you.
 
-both databases are created with the name: `syncdb`,
+both databases are created with the name: ***syncdb***,
 you can change this in the [`appsettings.json`](./src/API.DbSync/appsettings.json) file.
 
 ## Running the API
