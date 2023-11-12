@@ -4,17 +4,28 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.DbSync.Controllers;
-[Route("[controller]")]
+
+/// <summary>
+/// Controller para acesso aos dados da tabela Produtos no SQL Server
+/// </summary>
+[Route("produtos-sqlserver")]
 [ApiController]
-public class ProdutosController : ControllerBase
+public class ProdutosSqlServerController : ControllerBase
 {
     private readonly SQLServerDbContext _sqlServerDbCtx;
 
-    public ProdutosController(SQLServerDbContext sqlServerDbCtx)
+    /// <summary>
+    /// Inicializa uma nova instância de <see cref="ProdutosSqlServerController"/>
+    /// </summary>
+    /// <param name="sqlServerDbCtx"></param>
+    public ProdutosSqlServerController(SQLServerDbContext sqlServerDbCtx)
     {
         _sqlServerDbCtx = sqlServerDbCtx;
     }
 
+    /// <summary>
+    /// Obtém todos os produtos
+    /// </summary>
     [HttpGet]
     public async Task<IActionResult> Get()
     {
@@ -22,6 +33,10 @@ public class ProdutosController : ControllerBase
         return Ok(produtos);
     }
 
+    /// <summary>
+    /// Obtém um produto pelo seu Id
+    /// </summary>
+    /// <param name="id"></param>
     [HttpGet("{id}")]
     public async Task<IActionResult> Get(int id)
     {
@@ -33,6 +48,10 @@ public class ProdutosController : ControllerBase
         return Ok(produto);
     }
 
+    /// <summary>
+    /// Cria um novo produto
+    /// </summary>
+    /// <param name="produto"></param>
     [HttpPost]
     public async Task<IActionResult> Post(Produto produto)
     {
@@ -41,6 +60,11 @@ public class ProdutosController : ControllerBase
         return Ok(produto);
     }
 
+    /// <summary>
+    /// Atualiza um produto
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="produto"></param>
     [HttpPut("{id}")]
     public async Task<IActionResult> Put(int id, Produto produto)
     {
@@ -58,6 +82,10 @@ public class ProdutosController : ControllerBase
         return Ok(dbProduto);
     }
 
+    /// <summary>
+    /// Exclui um produto
+    /// </summary>
+    /// <param name="id"></param>
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
