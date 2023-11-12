@@ -11,9 +11,15 @@ The API syncs the data from SQLServer to MySQL through a background service that
 
 ## Setup
 
-## Migration
+Make sure you have the following installed:
 
-cd into the API.DbSync project and run the following commands:
+- .NET Core 7.0
+- SQLServer
+- MySQL
+
+## Migrations
+
+cd into the `API.DbSync` project and run the following commands:
 
 ### SQLServer
 
@@ -29,12 +35,11 @@ dotnet ef database update --context MySQLDbContext
 
 ## Running the API
 
-cd into the API.DbSync project and run the following command:
+cd into the `API.DbSync` project and run the following command:
 
 ```bash
 dotnet run
 ```
 
-open the URL where the API is running and go to `/swagger` to see the documentation.
-
+open the URL where the API is running and go to `/swagger` to see the documentation and test the endpoints.
 
