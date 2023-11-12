@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a proof of concept for a realtime database sync between SQLServer and MySQL.
+This project is a proof of concept for a database sync between SQLServer and MySQL.
 
 The API has a full CRUD for a `Product` entity in SQLServer
 and two READ endpoints for the same entity in MySQL.
